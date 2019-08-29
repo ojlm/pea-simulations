@@ -1,0 +1,31 @@
+buildscript {
+  repositories {
+    mavenLocal()
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    mavenCentral()
+  }
+}
+
+plugins {
+  id 'scala'
+}
+
+repositories {
+  mavenLocal()
+  maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+  mavenCentral()
+  jcenter()
+}
+
+dependencies {
+  implementation 'org.scala-lang:scala-library:2.12.8'
+  implementation group: 'cc.akkaha', name: 'pea_2.12', version: '0.1.0'
+}
+
+sourceSets {
+  main {
+    scala {
+      srcDirs = ['src/main/scala']
+    }
+  }
+}
