@@ -1,4 +1,4 @@
-package pea.example
+package gatling.example
 
 import asura.pea.gatling.PeaSimulation
 import io.gatling.core.Predef._
@@ -8,7 +8,10 @@ import scala.concurrent.duration._
 
 class BasicSimulation extends PeaSimulation {
 
-  override val description: String = "BasicSimulation for test."
+  override val description: String =
+    """
+      |这个是官方提供的一个示例, 就是由十几个请求组成的一个场景. 并发数为1.
+      |""".stripMargin
 
   val httpProtocol = http
     .baseUrl("http://computer-database.gatling.io") // Here is the root for all relative URLs
@@ -19,10 +22,10 @@ class BasicSimulation extends PeaSimulation {
 
   val scn = scenario("Scenario Name") // A scenario is a chain of requests and pauses
     .exec(http("request_1")
-    .get("/"))
+      .get("/"))
     .pause(7) // Note that Gatling has recorder real time pauses
     .exec(http("request_2")
-    .get("/computers?f=macbook"))
+      .get("/computers?f=macbook"))
     .pause(2)
     .exec(http("request_3")
       .get("/computers/6"))
