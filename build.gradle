@@ -19,11 +19,14 @@ repositories {
 
 dependencies {
   implementation 'org.scala-lang:scala-library:2.12.8'
-  implementation group: 'cc.akkaha', name: 'pea_2.12', version: '0.1.0'
+  implementation group: 'cc.akkaha', name: 'pea_2.12', version: '0.2.0'
 }
 
 sourceSets {
   main {
+    java {
+      srcDirs = ['src/main/java']
+    }
     scala {
       srcDirs = ['src/main/scala']
     }
