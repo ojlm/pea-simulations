@@ -43,6 +43,6 @@ class HelloGrpcSimulation extends PeaSimulation {
     )
 
   setUp(
-    scn.inject(atOnceUsers(1000))
+    scn.inject(atOnceUsers(10000))
   ).protocols(grpcProtocol)
 }
