@@ -3,14 +3,14 @@ import asura.common.util.StringUtils
 import asura.pea.actor.GatlingRunnerActor
 import asura.pea.actor.GatlingRunnerActor.StartMessage
 import com.typesafe.scalalogging.StrictLogging
-import pea.dubbo.GreetingSimulation
+import pea.grpc.HelloGrpcSimulation
 
 import scala.concurrent.ExecutionContext.global
 
 object SimulationApp extends StrictLogging {
 
   def main(args: Array[String]): Unit = {
-    val simulation = classOf[GreetingSimulation].getName
+    val simulation = classOf[HelloGrpcSimulation].getName
     val message = StartMessage(
       IDEPathHelper.binariesFolder.toAbsolutePath.toString,
       simulation,
