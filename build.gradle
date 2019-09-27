@@ -28,7 +28,7 @@ repositories {
 
 dependencies {
   implementation 'org.scala-lang:scala-library:2.12.8'
-  implementation group: 'cc.akkaha', name: 'pea_2.12', version: '0.3.0'
+  implementation group: 'cc.akkaha', name: 'pea_2.12', version: '0.4.0'
 }
 
 protobuf {
