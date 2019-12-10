@@ -3,7 +3,7 @@ package pea.example.dubbo
 import io.gatling.core.Predef._
 import pea.app.gatling.PeaSimulation
 import pea.dubbo.Predef._
-import pea.example.dubbo.api.GreetingService
+import pea.example.ext.dubbo.api.GreetingService
 
 class GreetingSimulation extends PeaSimulation {
 

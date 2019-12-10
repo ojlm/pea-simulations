@@ -1,4 +1,4 @@
-package pea.example.dubbo.api;
+package pea.example.ext.dubbo.api;
 
 public interface GreetingService {
 

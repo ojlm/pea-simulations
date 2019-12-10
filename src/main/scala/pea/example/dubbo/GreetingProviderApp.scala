@@ -3,8 +3,8 @@ package pea.example.dubbo
 import java.util.concurrent.CountDownLatch
 
 import org.apache.dubbo.config.{ApplicationConfig, RegistryConfig, ServiceConfig}
-import pea.example.dubbo.api.GreetingService
 import pea.example.dubbo.provider.GreetingsServiceImpl
+import pea.example.ext.dubbo.api.GreetingService
 
 object GreetingProviderApp {
 

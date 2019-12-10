@@ -1,7 +1,7 @@
 package pea.example.dubbo
 
 import org.apache.dubbo.config.{ApplicationConfig, ReferenceConfig}
-import pea.example.dubbo.api.GreetingService
+import pea.example.ext.dubbo.api.GreetingService
 
 object GreetingConsumerApp {
 
