@@ -1,9 +1,9 @@
-package pea.dubbo
+package pea.example.dubbo
 
-import asura.pea.dubbo.Predef._
-import asura.pea.gatling.PeaSimulation
 import io.gatling.core.Predef._
-import pea.dubbo.api.GreetingService
+import pea.app.gatling.PeaSimulation
+import pea.dubbo.Predef._
+import pea.example.dubbo.api.GreetingService
 
 class GreetingSimulation extends PeaSimulation {
 

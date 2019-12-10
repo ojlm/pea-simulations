@@ -3,7 +3,7 @@
 //
 // Protofile syntax: PROTO3
 
-package pea.grpc.hello
+package pea.example.grpc.hello
 
 
 
@@ -34,7 +34,7 @@ final case class HelloResponse(
         }
       };
     }
-    def mergeFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): pea.grpc.hello.HelloResponse = {
+    def mergeFrom(`_input__`: _root_.com.google.protobuf.CodedInputStream): pea.example.grpc.hello.HelloResponse = {
       var __reply = this.reply
       var _done__ = false
       while (!_done__) {
@@ -46,7 +46,7 @@ final case class HelloResponse(
           case tag => _input__.skipField(tag)
         }
       }
-      pea.grpc.hello.HelloResponse(
+      pea.example.grpc.hello.HelloResponse(
           reply = __reply
       )
     }
@@ -66,22 +66,22 @@ final case class HelloResponse(
       }
     }
     override def toString: String = _root_.com.trueaccord.scalapb.TextFormat.printToUnicodeString(this)
-    def companion = pea.grpc.hello.HelloResponse
+    def companion = pea.example.grpc.hello.HelloResponse
 }
 
-object HelloResponse extends com.trueaccord.scalapb.GeneratedMessageCompanion[pea.grpc.hello.HelloResponse] {
-  implicit def messageCompanion: com.trueaccord.scalapb.GeneratedMessageCompanion[pea.grpc.hello.HelloResponse] = this
-  def fromFieldsMap(__fieldsMap: scala.collection.immutable.Map[_root_.com.google.protobuf.Descriptors.FieldDescriptor, scala.Any]): pea.grpc.hello.HelloResponse = {
+object HelloResponse extends com.trueaccord.scalapb.GeneratedMessageCompanion[pea.example.grpc.hello.HelloResponse] {
+  implicit def messageCompanion: com.trueaccord.scalapb.GeneratedMessageCompanion[pea.example.grpc.hello.HelloResponse] = this
+  def fromFieldsMap(__fieldsMap: scala.collection.immutable.Map[_root_.com.google.protobuf.Descriptors.FieldDescriptor, scala.Any]): pea.example.grpc.hello.HelloResponse = {
     require(__fieldsMap.keys.forall(_.getContainingType() == javaDescriptor), "FieldDescriptor does not match message type.")
     val __fields = javaDescriptor.getFields
-    pea.grpc.hello.HelloResponse(
+    pea.example.grpc.hello.HelloResponse(
       __fieldsMap.getOrElse(__fields.get(0), "").asInstanceOf[String]
     )
   }
-  implicit def messageReads: _root_.scalapb.descriptors.Reads[pea.grpc.hello.HelloResponse] = _root_.scalapb.descriptors.Reads{
+  implicit def messageReads: _root_.scalapb.descriptors.Reads[pea.example.grpc.hello.HelloResponse] = _root_.scalapb.descriptors.Reads{
     case _root_.scalapb.descriptors.PMessage(__fieldsMap) =>
       require(__fieldsMap.keys.forall(_.containingMessage == scalaDescriptor), "FieldDescriptor does not match message type.")
-      pea.grpc.hello.HelloResponse(
+      pea.example.grpc.hello.HelloResponse(
         __fieldsMap.get(scalaDescriptor.findFieldByNumber(1).get).map(_.as[String]).getOrElse("")
       )
     case _ => throw new RuntimeException("Expected PMessage")
@@ -91,9 +91,9 @@ object HelloResponse extends com.trueaccord.scalapb.GeneratedMessageCompanion[pe
   def messageCompanionForFieldNumber(__number: Int): _root_.com.trueaccord.scalapb.GeneratedMessageCompanion[_] = throw new MatchError(__number)
   lazy val nestedMessagesCompanions: Seq[_root_.com.trueaccord.scalapb.GeneratedMessageCompanion[_]] = Seq.empty
   def enumCompanionForFieldNumber(__fieldNumber: Int): _root_.com.trueaccord.scalapb.GeneratedEnumCompanion[_] = throw new MatchError(__fieldNumber)
-  lazy val defaultInstance = pea.grpc.hello.HelloResponse(
+  lazy val defaultInstance = pea.example.grpc.hello.HelloResponse(
   )
-  implicit class HelloResponseLens[UpperPB](_l: _root_.com.trueaccord.lenses.Lens[UpperPB, pea.grpc.hello.HelloResponse]) extends _root_.com.trueaccord.lenses.ObjectLens[UpperPB, pea.grpc.hello.HelloResponse](_l) {
+  implicit class HelloResponseLens[UpperPB](_l: _root_.com.trueaccord.lenses.Lens[UpperPB, pea.example.grpc.hello.HelloResponse]) extends _root_.com.trueaccord.lenses.ObjectLens[UpperPB, pea.example.grpc.hello.HelloResponse](_l) {
     def reply: _root_.com.trueaccord.lenses.Lens[UpperPB, String] = field(_.reply)((c_, f_) => c_.copy(reply = f_))
   }
   final val REPLY_FIELD_NUMBER = 1

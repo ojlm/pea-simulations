@@ -3,7 +3,7 @@
 //
 // Protofile syntax: PROTO3
 
-package pea.grpc.hello
+package pea.example.grpc.hello
 
 
 
@@ -11,14 +11,14 @@ object HelloProto extends _root_.com.trueaccord.scalapb.GeneratedFileObject {
   lazy val dependencies: Seq[_root_.com.trueaccord.scalapb.GeneratedFileObject] = Seq(
   )
   lazy val messagesCompanions: Seq[_root_.com.trueaccord.scalapb.GeneratedMessageCompanion[_]] = Seq(
-    pea.grpc.hello.HelloRequest,
-    pea.grpc.hello.HelloResponse
+    pea.example.grpc.hello.HelloRequest,
+    pea.example.grpc.hello.HelloResponse
   )
   private lazy val ProtoBytes: Array[Byte] =
       com.trueaccord.scalapb.Encoding.fromBase64(scala.collection.Seq(
-  """CgtoZWxsby5wcm90bxIIcGVhLmdycGMiKgoMSGVsbG9SZXF1ZXN0EhoKCGdyZWV0aW5nGAEgASgJUghncmVldGluZyIlCg1IZ
-  Wxsb1Jlc3BvbnNlEhQKBXJlcGx5GAEgASgJUgVyZXBseTJLCgxIZWxsb1NlcnZpY2USOwoIU2F5SGVsbG8SFi5wZWEuZ3JwYy5IZ
-  Wxsb1JlcXVlc3QaFy5wZWEuZ3JwYy5IZWxsb1Jlc3BvbnNlYgZwcm90bzM="""
+  """CgtoZWxsby5wcm90bxIQcGVhLmV4YW1wbGUuZ3JwYyIqCgxIZWxsb1JlcXVlc3QSGgoIZ3JlZXRpbmcYASABKAlSCGdyZWV0a
+  W5nIiUKDUhlbGxvUmVzcG9uc2USFAoFcmVwbHkYASABKAlSBXJlcGx5MlsKDEhlbGxvU2VydmljZRJLCghTYXlIZWxsbxIeLnBlY
+  S5leGFtcGxlLmdycGMuSGVsbG9SZXF1ZXN0Gh8ucGVhLmV4YW1wbGUuZ3JwYy5IZWxsb1Jlc3BvbnNlYgZwcm90bzM="""
       ).mkString)
   lazy val scalaDescriptor: _root_.scalapb.descriptors.FileDescriptor = {
     val scalaProto = com.google.protobuf.descriptor.FileDescriptorProto.parseFrom(ProtoBytes)

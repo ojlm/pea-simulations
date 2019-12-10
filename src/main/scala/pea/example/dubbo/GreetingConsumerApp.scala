@@ -1,7 +1,7 @@
-package pea.dubbo
+package pea.example.dubbo
 
-import com.alibaba.dubbo.config.{ApplicationConfig, ReferenceConfig}
-import pea.dubbo.api.GreetingService
+import org.apache.dubbo.config.{ApplicationConfig, ReferenceConfig}
+import pea.example.dubbo.api.GreetingService
 
 object GreetingConsumerApp {
 

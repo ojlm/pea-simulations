@@ -1,12 +1,12 @@
-package pea.dubbo
+package pea.example.dubbo
 
 import java.util.concurrent.CountDownLatch
 
-import com.alibaba.dubbo.config.{ApplicationConfig, RegistryConfig, ServiceConfig}
-import pea.dubbo.api.GreetingService
-import pea.dubbo.provider.GreetingsServiceImpl
+import org.apache.dubbo.config.{ApplicationConfig, RegistryConfig, ServiceConfig}
+import pea.example.dubbo.api.GreetingService
+import pea.example.dubbo.provider.GreetingsServiceImpl
 
-object GreetingProviderApp  {
+object GreetingProviderApp {
 
   def main(args: Array[String]): Unit = {
     val service = new ServiceConfig[GreetingService]()

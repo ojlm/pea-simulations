@@ -1,10 +1,10 @@
-import asura.common.util.FutureUtils.RichFuture
-import asura.common.util.StringUtils
-import asura.pea.PeaConfig
-import asura.pea.actor.GatlingRunnerActor
-import asura.pea.actor.GatlingRunnerActor.StartMessage
 import com.typesafe.scalalogging.StrictLogging
-import pea.grpc.HelloGrpcSimulation
+import pea.app.PeaConfig
+import pea.app.actor.GatlingRunnerActor
+import pea.app.actor.GatlingRunnerActor.StartMessage
+import pea.common.util.FutureUtils.RichFuture
+import pea.common.util.StringUtils
+import pea.example.dubbo.GreetingSimulation
 
 import scala.concurrent.ExecutionContext.global
 
@@ -13,7 +13,7 @@ object SimulationApp extends StrictLogging {
   PeaConfig.defaultSimulationOutputFolder = IDEPathHelper.binariesFolder.toAbsolutePath.toString
 
   def main(args: Array[String]): Unit = {
-    val simulation = classOf[HelloGrpcSimulation].getName
+    val simulation = classOf[GreetingSimulation].getName
     val message = StartMessage(
       IDEPathHelper.binariesFolder.toAbsolutePath.toString,
       simulation,

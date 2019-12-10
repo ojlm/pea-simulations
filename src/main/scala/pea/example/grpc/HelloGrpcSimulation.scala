@@ -1,11 +1,11 @@
-package pea.grpc
+package pea.example.grpc
 
-import asura.pea.gatling.PeaSimulation
-import asura.pea.grpc.Predef._
 import io.gatling.core.Predef._
 import io.grpc.netty.NettyChannelBuilder
 import io.grpc.{Context, Metadata, Status}
-import pea.grpc.hello.{HelloRequest, HelloServiceGrpc}
+import pea.app.gatling.PeaSimulation
+import pea.example.grpc.hello.{HelloRequest, HelloServiceGrpc}
+import pea.grpc.Predef._
 
 class HelloGrpcSimulation extends PeaSimulation {
 

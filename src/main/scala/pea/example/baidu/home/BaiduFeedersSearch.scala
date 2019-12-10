@@ -1,8 +1,8 @@
-package baidu.home
+package pea.example.baidu.home
 
-import asura.pea.gatling.PeaSimulation
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
+import pea.app.gatling.PeaSimulation
 
 import scala.concurrent.duration._
 

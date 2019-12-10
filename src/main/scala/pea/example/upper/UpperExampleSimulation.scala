@@ -1,7 +1,7 @@
 package pea.example.upper
 
-import asura.pea.gatling.PeaSimulation
 import io.gatling.core.Predef._
+import pea.app.gatling.PeaSimulation
 import pea.example.upper.Predef._
 
 // 简单如何自定义协议实现

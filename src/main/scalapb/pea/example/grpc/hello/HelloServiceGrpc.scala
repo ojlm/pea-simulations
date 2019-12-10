@@ -1,37 +1,37 @@
-package pea.grpc.hello
+package pea.example.grpc.hello
 
 object HelloServiceGrpc {
-  val METHOD_SAY_HELLO: _root_.io.grpc.MethodDescriptor[pea.grpc.hello.HelloRequest, pea.grpc.hello.HelloResponse] =
+  val METHOD_SAY_HELLO: _root_.io.grpc.MethodDescriptor[pea.example.grpc.hello.HelloRequest, pea.example.grpc.hello.HelloResponse] =
     _root_.io.grpc.MethodDescriptor.newBuilder()
       .setType(_root_.io.grpc.MethodDescriptor.MethodType.UNARY)
-      .setFullMethodName(_root_.io.grpc.MethodDescriptor.generateFullMethodName("pea.grpc.HelloService", "SayHello"))
-      .setRequestMarshaller(new com.trueaccord.scalapb.grpc.Marshaller(pea.grpc.hello.HelloRequest))
-      .setResponseMarshaller(new com.trueaccord.scalapb.grpc.Marshaller(pea.grpc.hello.HelloResponse))
+      .setFullMethodName(_root_.io.grpc.MethodDescriptor.generateFullMethodName("pea.example.grpc.HelloService", "SayHello"))
+      .setRequestMarshaller(new com.trueaccord.scalapb.grpc.Marshaller(pea.example.grpc.hello.HelloRequest))
+      .setResponseMarshaller(new com.trueaccord.scalapb.grpc.Marshaller(pea.example.grpc.hello.HelloResponse))
       .build()
   
   val SERVICE: _root_.io.grpc.ServiceDescriptor =
-    _root_.io.grpc.ServiceDescriptor.newBuilder("pea.grpc.HelloService")
-      .setSchemaDescriptor(new _root_.com.trueaccord.scalapb.grpc.ConcreteProtoFileDescriptorSupplier(pea.grpc.hello.HelloProto.javaDescriptor))
+    _root_.io.grpc.ServiceDescriptor.newBuilder("pea.example.grpc.HelloService")
+      .setSchemaDescriptor(new _root_.com.trueaccord.scalapb.grpc.ConcreteProtoFileDescriptorSupplier(pea.example.grpc.hello.HelloProto.javaDescriptor))
       .addMethod(METHOD_SAY_HELLO)
       .build()
   
   trait HelloService extends _root_.com.trueaccord.scalapb.grpc.AbstractService {
     override def serviceCompanion = HelloService
-    def sayHello(request: pea.grpc.hello.HelloRequest): scala.concurrent.Future[pea.grpc.hello.HelloResponse]
+    def sayHello(request: pea.example.grpc.hello.HelloRequest): scala.concurrent.Future[pea.example.grpc.hello.HelloResponse]
   }
   
   object HelloService extends _root_.com.trueaccord.scalapb.grpc.ServiceCompanion[HelloService] {
     implicit def serviceCompanion: _root_.com.trueaccord.scalapb.grpc.ServiceCompanion[HelloService] = this
-    def javaDescriptor: _root_.com.google.protobuf.Descriptors.ServiceDescriptor = pea.grpc.hello.HelloProto.javaDescriptor.getServices().get(0)
+    def javaDescriptor: _root_.com.google.protobuf.Descriptors.ServiceDescriptor = pea.example.grpc.hello.HelloProto.javaDescriptor.getServices().get(0)
   }
   
   trait HelloServiceBlockingClient {
     def serviceCompanion = HelloService
-    def sayHello(request: pea.grpc.hello.HelloRequest): pea.grpc.hello.HelloResponse
+    def sayHello(request: pea.example.grpc.hello.HelloRequest): pea.example.grpc.hello.HelloResponse
   }
   
   class HelloServiceBlockingStub(channel: _root_.io.grpc.Channel, options: _root_.io.grpc.CallOptions = _root_.io.grpc.CallOptions.DEFAULT) extends _root_.io.grpc.stub.AbstractStub[HelloServiceBlockingStub](channel, options) with HelloServiceBlockingClient {
-    override def sayHello(request: pea.grpc.hello.HelloRequest): pea.grpc.hello.HelloResponse = {
+    override def sayHello(request: pea.example.grpc.hello.HelloRequest): pea.example.grpc.hello.HelloResponse = {
       _root_.io.grpc.stub.ClientCalls.blockingUnaryCall(channel.newCall(METHOD_SAY_HELLO, options), request)
     }
     
@@ -39,7 +39,7 @@ object HelloServiceGrpc {
   }
   
   class HelloServiceStub(channel: _root_.io.grpc.Channel, options: _root_.io.grpc.CallOptions = _root_.io.grpc.CallOptions.DEFAULT) extends _root_.io.grpc.stub.AbstractStub[HelloServiceStub](channel, options) with HelloService {
-    override def sayHello(request: pea.grpc.hello.HelloRequest): scala.concurrent.Future[pea.grpc.hello.HelloResponse] = {
+    override def sayHello(request: pea.example.grpc.hello.HelloRequest): scala.concurrent.Future[pea.example.grpc.hello.HelloResponse] = {
       com.trueaccord.scalapb.grpc.Grpc.guavaFuture2ScalaFuture(_root_.io.grpc.stub.ClientCalls.futureUnaryCall(channel.newCall(METHOD_SAY_HELLO, options), request))
     }
     
@@ -50,8 +50,8 @@ object HelloServiceGrpc {
     _root_.io.grpc.ServerServiceDefinition.builder(SERVICE)
     .addMethod(
       METHOD_SAY_HELLO,
-      _root_.io.grpc.stub.ServerCalls.asyncUnaryCall(new _root_.io.grpc.stub.ServerCalls.UnaryMethod[pea.grpc.hello.HelloRequest, pea.grpc.hello.HelloResponse] {
-        override def invoke(request: pea.grpc.hello.HelloRequest, observer: _root_.io.grpc.stub.StreamObserver[pea.grpc.hello.HelloResponse]): Unit =
+      _root_.io.grpc.stub.ServerCalls.asyncUnaryCall(new _root_.io.grpc.stub.ServerCalls.UnaryMethod[pea.example.grpc.hello.HelloRequest, pea.example.grpc.hello.HelloResponse] {
+        override def invoke(request: pea.example.grpc.hello.HelloRequest, observer: _root_.io.grpc.stub.StreamObserver[pea.example.grpc.hello.HelloResponse]): Unit =
           serviceImpl.sayHello(request).onComplete(com.trueaccord.scalapb.grpc.Grpc.completeObserver(observer))(
             executionContext)
       }))
@@ -61,6 +61,6 @@ object HelloServiceGrpc {
   
   def stub(channel: _root_.io.grpc.Channel): HelloServiceStub = new HelloServiceStub(channel)
   
-  def javaDescriptor: _root_.com.google.protobuf.Descriptors.ServiceDescriptor = pea.grpc.hello.HelloProto.javaDescriptor.getServices().get(0)
+  def javaDescriptor: _root_.com.google.protobuf.Descriptors.ServiceDescriptor = pea.example.grpc.hello.HelloProto.javaDescriptor.getServices().get(0)
   
 }

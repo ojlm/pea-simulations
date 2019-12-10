@@ -1,12 +1,12 @@
-package pea.grpc
+package pea.example.grpc
 
 import java.util.concurrent.TimeUnit
 
-import asura.common.util.LogUtils
 import io.grpc.ManagedChannel
 import io.grpc.netty.NettyChannelBuilder
-import pea.grpc.hello.HelloServiceGrpc.HelloServiceBlockingStub
-import pea.grpc.hello.{HelloRequest, HelloServiceGrpc}
+import pea.common.util.LogUtils
+import pea.example.grpc.hello.HelloServiceGrpc.HelloServiceBlockingStub
+import pea.example.grpc.hello.{HelloRequest, HelloServiceGrpc}
 
 object HelloServiceClient {
 

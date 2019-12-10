@@ -1,6 +1,6 @@
-package pea.dubbo.provider;
+package pea.example.dubbo.provider;
 
-import pea.dubbo.api.GreetingService;
+import pea.example.dubbo.api.GreetingService;
 
 public class GreetingsServiceImpl implements GreetingService {
 

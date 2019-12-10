@@ -1,8 +1,8 @@
-package pea.grpc
+package pea.example.grpc
 
 import io.grpc.Server
 import io.grpc.netty.NettyServerBuilder
-import pea.grpc.hello.{HelloRequest, HelloResponse, HelloServiceGrpc}
+import pea.example.grpc.hello.{HelloRequest, HelloResponse, HelloServiceGrpc}
 
 import scala.concurrent.{ExecutionContext, Future}
 

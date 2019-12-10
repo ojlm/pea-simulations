@@ -4,20 +4,20 @@ buildscript {
     maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
     mavenCentral()
   }
-  dependencies {
-    classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
-  }
+//  dependencies {
+//    classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+//  }
 }
 
 plugins {
   id 'com.github.johnrengelman.shadow' version '5.1.0'
-  id 'com.google.protobuf' version '0.8.8'
+  // id 'com.google.protobuf' version '0.8.8'
   id 'scala'
 }
 
-ext {
-  scalapbVersion = '0.9.1'
-}
+//ext {
+//  scalapbVersion = '0.9.1'
+//}
 
 repositories {
   mavenLocal()
@@ -28,41 +28,41 @@ repositories {
 
 dependencies {
   implementation 'org.scala-lang:scala-library:2.12.8'
-  implementation group: 'cc.akkaha', name: 'pea_2.12', version: '0.4.0'
+  implementation group: 'cc.akkaha', name: 'pea_2.12', version: '0.6.0'
 }
 
-protobuf {
-  generatedFilesBaseDir = "$projectDir/src"
-  protoc {
-    artifact = 'com.google.protobuf:protoc:3.7.1'
-  }
-  plugins {
-    scalapb {
-      artifact = (org.gradle.nativeplatform.platform.internal.DefaultNativePlatform.getCurrentOperatingSystem().isWindows()) ?
-        "com.thesamet.scalapb:protoc-gen-scalapb:${scalapbVersion}:windows@bat" :
-        "com.thesamet.scalapb:protoc-gen-scalapb:${scalapbVersion}:unix@sh"
-    }
-  }
-  generateProtoTasks {
-    all().each { task ->
-      task.builtins {
-        remove java
-      }
-      task.plugins {
-        scalapb {
-          // add any ScalaPB generator options here. See: https://scalapb.github.io/scalapbc.html#passing-generator-parameters
-          option 'grpc'
-        }
-      }
-    }
-  }
-}
+//protobuf {
+//  generatedFilesBaseDir = "$projectDir/src"
+//  protoc {
+//    artifact = 'com.google.protobuf:protoc:3.7.1'
+//  }
+//  plugins {
+//    scalapb {
+//      artifact = (org.gradle.nativeplatform.platform.internal.DefaultNativePlatform.getCurrentOperatingSystem().isWindows()) ?
+//        "com.thesamet.scalapb:protoc-gen-scalapb:${scalapbVersion}:windows@bat" :
+//        "com.thesamet.scalapb:protoc-gen-scalapb:${scalapbVersion}:unix@sh"
+//    }
+//  }
+//  generateProtoTasks {
+//    all().each { task ->
+//      task.builtins {
+//        remove java
+//      }
+//      task.plugins {
+//        scalapb {
+//          // add any ScalaPB generator options here. See: https://scalapb.github.io/scalapbc.html#passing-generator-parameters
+//          option 'grpc'
+//        }
+//      }
+//    }
+//  }
+//}
 
 sourceSets {
   main {
-    proto {
-      srcDir 'src/main/protobuf'
-    }
+//    proto {
+//      srcDir 'src/main/protobuf'
+//    }
     java {
       srcDirs = ['src/main/java']
     }
