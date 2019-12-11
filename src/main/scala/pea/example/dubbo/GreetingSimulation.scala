@@ -20,7 +20,7 @@ class GreetingSimulation extends PeaSimulation {
   val scn = scenario("dubbo")
     .exec(
       invoke(classOf[GreetingService]) { (service, _) =>
-        service.sayHello("pea")
+        service.sayHello2("pea")
       }.check(simple { response => // 自定义检查, 可推导返回类型
         response.value == "hi, pea"
       }).check(
@@ -29,6 +29,6 @@ class GreetingSimulation extends PeaSimulation {
     )
 
   setUp(
-    scn.inject(atOnceUsers(10000)) // 一次性模拟 10000 用户
+    scn.inject(atOnceUsers(10)) // 一次性模拟 10000 用户
   ).protocols(dubboProtocol)
 }

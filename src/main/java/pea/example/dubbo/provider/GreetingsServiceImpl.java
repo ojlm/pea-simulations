@@ -8,4 +8,9 @@ public class GreetingsServiceImpl implements GreetingService {
   public String sayHello(String name) {
     return "hi, " + name;
   }
+
+  @Override
+  public String sayHello2(String name) {
+    return "hi, " + name;
+  }
 }
