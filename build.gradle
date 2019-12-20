@@ -28,7 +28,7 @@ repositories {
 
 dependencies {
   implementation 'org.scala-lang:scala-library:2.12.8'
-  implementation group: 'cc.akkaha', name: 'pea_2.12', version: '0.6.0'
+  implementation group: 'cc.akkaha', name: 'pea_2.12', version: '0.7.0'
   implementation files('libs/ext-example-library.jar')
 }
 
