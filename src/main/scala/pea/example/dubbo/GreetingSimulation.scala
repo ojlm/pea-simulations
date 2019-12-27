@@ -22,9 +22,9 @@ class GreetingSimulation extends PeaSimulation {
       invoke(classOf[GreetingService]) { (service, _) =>
         service.sayHello2("pea")
       }.check(simple { response => // 自定义检查, 可推导返回类型
-        response.value == "hi, pea"
+        response.value.getValue == "hi, pea"
       }).check(
-        jsonPath("$").is("hi, pea") // jsonPath 检查, 复杂对象的响应会转换 Map
+        jsonPath("$.value").is("hi, pea") // jsonPath 检查, 复杂对象的响应会转换 Map
       )
     )
 

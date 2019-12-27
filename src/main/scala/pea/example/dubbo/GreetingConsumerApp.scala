@@ -12,8 +12,8 @@ object GreetingConsumerApp {
     reference.setInterface(classOf[GreetingService])
     reference.setUrl(s"dubbo://127.0.0.1:20880/${classOf[GreetingService].getName}")
     val service = reference.get()
-    val response = service.sayHello("pea")
-    println(s"Got: ${response}")
+    val response = service.sayHello2("pea")
+    println(s"Got: ${response.getValue}")
     reference.destroy()
     System.exit(0)
   }
